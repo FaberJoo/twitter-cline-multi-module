@@ -1,6 +1,25 @@
 server:
   port: 8000
 
+spring:
+  application:
+    name: twitter-clone-multi-module
+  profiles:
+    include: db
+  config:
+    import: 'aws-parameterstore:/config/twitter-local'
+  cloud:
+    aws:
+      parameterstore:
+        region: ${aws_region}
+      credentials:
+        access-key: ${aws_access_key}
+        secret-key: ${aws_secret_key}
+  datasource:
+    url: jdbc:postgresql://${.db.host}:${.db.port}/${.db.name}
+    username: ${.db.username}
+    password: ${.db.password}
+
 logging:
   level:
     web: off

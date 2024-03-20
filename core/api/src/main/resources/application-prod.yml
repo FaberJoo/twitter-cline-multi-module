@@ -1,0 +1,10 @@
+spring:
+  devtools:
+    add-properties: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    web: off
