@@ -1,4 +1,4 @@
-package org.twitter.api.common.advice;
+package org.twitter.api.controller;
 
 import org.twitter.api.common.exception.BusinessException;
 import org.twitter.api.common.exception.ErrorCode;
@@ -25,7 +25,7 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 @RequiredArgsConstructor
 @Slf4j
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class ApiControllerAdvice {
 
     /**
      * - 주로 @Valid 또는 @Validated 에서 발생한 요청 데이터 검증 실패 예외를 처리 <br>
